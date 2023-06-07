@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # in order to use the admin app, we need to create an administrative account:
+    # python3 manage.py createsuperuser
     path('admin/', admin.site.urls),
     path('flights/',include('flights.urls')),
 ]
