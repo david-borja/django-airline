@@ -23,5 +23,6 @@ def book(request, flight_id):
         passenger = Passenger.objects.get(pk=passenger_id)
         passenger.flights.add(flight) # this abstraction is equivalent to adding a new row into a table
         
-        # reverse takes the name of a particular view, and gives its url
-        return HttpResponseRedirect(reverse("flight", args=(flight.id)))
+        # reverse takes the name of a particular view, and gives its url.
+        # WARNING: args must be structured as a tuple!! so the end comma is crucial!
+        return HttpResponseRedirect(reverse("flight", args=(flight.id,)))
