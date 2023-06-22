@@ -22,4 +22,6 @@ urlpatterns = [
     # python3 manage.py createsuperuser
     path('admin/', admin.site.urls),
     path('flights/',include('flights.urls')),
+    # when we go to this path, we want to include all the urls associated with the users application
+    path('users/', include("users.urls"))
 ]
